@@ -33,9 +33,15 @@ class _BhaskaraCalculatorScreenState extends State<BhaskaraCalculatorScreen> {
       return;
     }
 
-    final double? a = double.tryParse(aStr);
-    final double? b = double.tryParse(bStr);
-    final double? c = double.tryParse(cStr);
+    final double? a = double.tryParse(
+      aStr.replaceAll(',', '.').replaceAll('+', ''),
+    );
+    final double? b = double.tryParse(
+      bStr.replaceAll(',', '.').replaceAll('+', ''),
+    );
+    final double? c = double.tryParse(
+      cStr.replaceAll(',', '.').replaceAll('+', ''),
+    );
 
     if (a == null || b == null || c == null) {
       setState(() => _errorMessage = 'Invalid numbers.');

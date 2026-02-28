@@ -24,6 +24,19 @@ void main() {
       expect(result.roots[0], 1);
     });
 
+    test(
+      'calculate returns correct negative roots for positive coefficients',
+      () {
+        final result = BhaskaraLogic.calculate(1, 5, 6);
+
+        expect(result.status, BhaskaraStatus.twoRealRoots);
+        expect(result.delta, 1);
+        expect(result.roots.length, 2);
+        expect(result.roots.contains(-2), isTrue);
+        expect(result.roots.contains(-3), isTrue);
+      },
+    );
+
     test('calculate returns invalidInputAisZero when a=0', () {
       final result = BhaskaraLogic.calculate(0, 5, 2);
 

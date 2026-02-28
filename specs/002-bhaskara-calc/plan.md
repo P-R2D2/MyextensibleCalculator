@@ -1,68 +1,104 @@
-# Implementation Plan: Bhaskara Calculation
+# Implementation Plan: [FEATURE]
 
-**Branch**: `002-bhaskara-calc` | **Date**: 2026-02-27 | **Spec**: [spec.md](./spec.md)
-**Input**: Feature specification from `/specs/002-bhaskara-calc/spec.md`
+**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
+**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+
+**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
 
 ## Summary
 
-Add the functionality to calculate Bhaskara (quadratic equation roots) to the extensible calculator app, separating pure algebraic logic from the UI and adhering to test-first and widget-driven architecture.
+[Extract from feature spec: primary requirement + technical approach from research]
 
 ## Technical Context
 
-**Language/Version**: Dart (Flutter)
-**Primary Dependencies**: flutter framework, flutter_test for testing
-**Storage**: N/A
-**Testing**: flutter_test (Widget and Unit tests)
-**Target Platform**: Android, iOS, Web, Desktop (Flutter supported platforms)
-**Project Type**: Mobile / Web / Desktop App
-**Performance Goals**: Instant calculation (< 200ms)
-**Constraints**: Handle mathematical edge cases (a=0, negative delta). Safe parsing of floating-point numbers.
-**Scale/Scope**: Small UI addition (new feature/screen) and a pure logic calculation class.
+<!--
+  ACTION REQUIRED: Replace the content in this section with the technical details
+  for the project. The structure here is presented in advisory capacity to guide
+  the iteration process.
+-->
+
+**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
+**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
+**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
+**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
+**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
+**Project Type**: [single/web/mobile - determines source structure]  
+**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
+**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
+**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
 ## Constitution Check
 
-*GATE: Passed*
-- **I. Widget-Driven Architecture**: The UI will be built as a set of stateless/stateful widgets for input fields and result display.
-- **II. Test-First Reliability**: We will add unit tests for the Bhaskara logic and widget tests for the form before finalizing.
-- **III. State & Logic Separation**: The mathematical logic for Bhaskara will be purely in a Dart class separate from the UI.
-- **IV. Lint & Style Compliance**: Will adhere to `flutter_lints` and use consistent naming guidelines.
-- **V. Asset & Localization Discipline**: Will avoid hardcoded strings by ensuring messages are centrally managed or appropriately abstracted to follow the layout patterns.
+*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+
+[Gates determined based on constitution file]
 
 ## Project Structure
 
 ### Documentation (this feature)
 
 ```text
-specs/002-bhaskara-calc/
-├── plan.md              # This file
-├── research.md          # Phase 0 output
-├── data-model.md        # Phase 1 output
-├── quickstart.md        # Phase 1 output
-├── contracts/           # Phase 1 output
-└── tasks.md             # Phase 2 output (future)
+specs/[###-feature]/
+├── plan.md              # This file (/speckit.plan command output)
+├── research.md          # Phase 0 output (/speckit.plan command)
+├── data-model.md        # Phase 1 output (/speckit.plan command)
+├── quickstart.md        # Phase 1 output (/speckit.plan command)
+├── contracts/           # Phase 1 output (/speckit.plan command)
+└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
-### Source Code
+### Source Code (repository root)
+<!--
+  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
+  for this feature. Delete unused options and expand the chosen structure with
+  real paths (e.g., apps/admin, packages/something). The delivered plan must
+  not include Option labels.
+-->
 
 ```text
-lib/
+# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
+src/
 ├── models/
-│   └── bhaskara_result.dart       # Data model for the results
-├── logic/
-│   └── bhaskara_logic.dart        # Pure mathematical logic
-├── ui/
-│   └── bhaskara_calculator_screen.dart # Widget for the Bhaskara UI
-test/
-├── logic/
-│   └── bhaskara_logic_test.dart
-└── ui/
-    └── bhaskara_calculator_screen_test.dart
+├── services/
+├── cli/
+└── lib/
+
+tests/
+├── contract/
+├── integration/
+└── unit/
+
+# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
+backend/
+├── src/
+│   ├── models/
+│   ├── services/
+│   └── api/
+└── tests/
+
+frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── services/
+└── tests/
+
+# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
+api/
+└── [same as backend above]
+
+ios/ or android/
+└── [platform-specific structure: feature modules, UI flows, platform tests]
 ```
 
-**Structure Decision**: The feature is entirely client-side. We split the code into `models` (for the result structure), `logic` (for the math), and `ui` (for the presentation), ensuring compliance with the constitution's state & logic separation rule.
+**Structure Decision**: [Document the selected structure and reference the real
+directories captured above]
 
 ## Complexity Tracking
 
+> **Fill ONLY if Constitution Check has violations that must be justified**
+
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 |-----------|------------|-------------------------------------|
-| None | N/A | Feature strictly adheres to existing constitution without complications. |
+| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
