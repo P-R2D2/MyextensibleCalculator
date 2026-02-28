@@ -1,8 +1,10 @@
-# first_app_ueg_20261 Development Guidelines
+﻿# first_app_ueg_20261 Development Guidelines
 
 Auto-generated from all feature plans. Last updated: 2026-02-20
 
 ## Active Technologies
+- [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION] + [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION] (002-bhaskara-calc)
+- [if applicable, e.g., PostgreSQL, CoreData, files or N/A] (002-bhaskara-calc)
 
 - Dart 3.11+ (per pubspec.yaml) + Flutter SDK, `provider` or `bloc` for state management, `get_it` for dependency injection/registration (NEEDS CLARIFICATION) (001-extensible-calculator)
 
@@ -22,6 +24,7 @@ tests/
 Dart 3.11+ (per pubspec.yaml): Follow standard conventions
 
 ## Recent Changes
+- 002-bhaskara-calc: Added [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION] + [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]
 - 001-extensible-calculator: Added Dart 3.11+ (per pubspec.yaml) + Flutter SDK, `provider` or `bloc` for state management, `get_it` for dependency injection/registration (NEEDS CLARIFICATION)
 
 - 001-extensible-calculator: Added Dart 3.11+ (per pubspec.yaml) + Flutter SDK, `provider` or `bloc` for state management, `get_it` for dependency injection/registration (NEEDS CLARIFICATION)

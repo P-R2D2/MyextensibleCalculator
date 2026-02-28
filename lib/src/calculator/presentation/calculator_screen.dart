@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../ui/bhaskara_calculator_screen.dart';
 import 'widgets/calculator_display.dart';
 import 'widgets/calculator_grid.dart';
 
@@ -14,7 +15,21 @@ class CalculatorScreen extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
         backgroundColor: Colors.blueGrey,
-        toolbarHeight: 35,
+        toolbarHeight: 50,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calculate_outlined),
+            tooltip: 'Bhaskara',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BhaskaraCalculatorScreen(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: const SafeArea(
         child: SingleChildScrollView(
